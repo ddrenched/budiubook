@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link type="text/css" rel="stylesheet" href="/css/reset.css">
+	<link type="text/css" rel="stylesheet" href="/css/index.css">
+	<title>indexPage</title>
+</head>
+<body>
+	<nav>
+		<a href="index">
+			<div class="logo">
+				<img src="/img/logo.png" alt="logo">
+				<span>budiubook</span>
+			</div>
+		</a>
+		<% if(login){ %>
+		<a class="me" href="user"><div>😃</div></a>
+		<% } else{ %>
+		<a class="me" href="login"><div>😪</div></a>
+		<% } %>
+	</nav>
+	<section class="contain">
+		<% for(var i = 0; i < booklist.length; i++){ %>
+			<div class="item">
+				<div class="item-wrap">
+					<section class="left">
+						<p>
+							<span class="key">书名：</span>
+							<span class="val"><%= booklist[i].name %></span>
+						</p>
+						<p>
+							<span class="key">出版社：</span>
+							<span class="val"><%= booklist[i].publish %></span>
+						</p>
+						<p>
+							<span class="key">作者：</span>
+							<span class="val"><%= booklist[i].author %></span>
+						</p>
+						<p>
+							<span class="key">年份：</span>
+							<span class="val"><%= booklist[i].year %></span>
+						</p>
+						<p>
+							<span class="key">谁的书：</span>
+							<span class="val"><%= booklist[i].owner %></span>
+						</p>
+						<% if(booklist[i].status==true && booklist[i].order==false){ %>
+							<div class="btn okbtn" onclick="borrow('<%= booklist[i].id %>', '<%=booklist[i].name %>', '<%= user.user %>', '<%= booklist[i].link %>')">借阅</div>
+							<% }else if(booklist[i].status==true && booklist[i].order==true){ %>
+							<div class="btn ordbtn">已被看中</div>
+							<% }else{ %>
+							<div class="btn nobtn">被借走了</div>
+						<% } %>
+					</section>
+					<section class="right">
+						<img src="<%= booklist[i].link %>">
+					</section>	
+				</div>
+			</div>
+		<% } %>	
+	</section>
+	<section class="page-contain">
+		<div class="page-wrap act-wrap">
+			<a href="javascript:void(0);" class="pagebtn actbtn" onclick="flip('pre')"><div><</div></a>
+			<a href="javascript:void(0);" class="pagebtn actbtn" onclick="flip('next')"><div>></div></a>
+		</div>
+		<div class="page-wrap num-wrap">
+			<% for(var i=1; i<=booklen; i++){ %>
+				<a href="index?<%= i-1 %>" class="pagebtn numbtn"><div><%= i %></div></a>
+			<% } %>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		function borrow(id, name, applicant, link){
+			let date = new Date(),
+				year = date.getFullYear(),
+				month = date.getMonth() + 1,
+				day = date.getDate(),	
+				dateStr = year + '/' + month + '/' + day;
+    		let data = {
+    			"id" : Number(id),
+    			"name" : name,
+    			"applicant" : applicant,
+    			"link" : link,
+    			"date" : dateStr,
+    			"process" : 'A',
+    			"order" : true
+    		}
+			data = JSON.stringify(data);
+			$.ajax({
+				url: '/borrow',
+				method: 'POST',
+				contentType: 'application/json; charset=utf-8',
+				data: data,
+				success: function(){
+					alert('借阅申请已提交，书会被标记为“已被看中”');
+					location.reload();
+				},
+				error: function(){
+					location.href = 'login';
+				}
+			})
+		}
+	</script>
+	<script type="text/javascript">
+		function flip(act){
+			let url = Number(location.search.substring(1));
+			if(act == 'pre'){
+				url -= 1;
+				location.href = 'index?' + url;
+			}
+			else if(act == 'next'){
+				url += 1;
+				location.href = 'index?' + url;
+			}
+		}
+	</script>
+</body>
+</html>

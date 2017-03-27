@@ -1,0 +1,118 @@
+$org: #f9ab21;
+body{
+	background-color: rgba(249, 171, 33, .1);
+}
+nav{
+	width: 100%;
+	height: 60px;
+	padding-top: 6px;
+	background-color: white;
+	overflow: hidden;
+	a{	
+		display: inline-block;
+		.logo {
+			flex: 1;
+			img{
+				width: 40px;
+				height: 40px;
+				margin: 10px 0 0 10px;
+			}
+			span{
+				vertical-align: top;
+				flex: 1;
+				line-height: 60px;
+				font-size: 20px;
+				font-weight: 600;
+				color: $org;
+				flex:3;
+			}
+		}
+	}
+}
+.info{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: rgba(249, 171, 33, .7);
+	color: white;
+	p{
+		margin-left: 20px;
+		font-size: 20px;
+		text-align: left;
+		span{
+			font-size: 14px;
+		}
+	}
+}
+.admin-contain{
+	width: 100%;
+	.note, .edit{
+		margin-top: 8px; 
+		width: 100%;
+		height: 60px;
+		border-bottom: 1px solid rgba(249, 171, 33, .7);
+		background-color: rgba(249, 171, 33, .2);
+		display: flex;
+		.title{
+			padding-left: 26px;
+			font-size: 16px;
+			line-height: 60px;
+			color: #999999;
+			flex: 5;
+		}
+		.sy{
+			font-size: 24px;
+			line-height: 60px;
+			flex: 1;
+		}
+	}
+}
+.user-contain{
+	width: 100%;
+	padding-bottom: 10%;
+	.title{
+		margin-top: 10px;
+		margin-left: 20px;
+		font-size: 16px;
+		color: #999999;
+	}
+	.item{
+		width: 100%;
+		display: flex;
+		margin-top: 20px;
+		padding: 10px 0;
+		border-bottom: 1px solid $org;
+		.left{
+			margin-left: 30px;
+			flex: 1;
+			#img{
+				width: 90px;
+				height: 130px;
+			}
+			p{
+				width: 150px;
+				font-size: 16px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+		.right{
+			flex: 1;
+			margin-right: 20px;
+			.btn{
+				width: 100px;
+				height: 30px;
+				background-color: $org;
+				color: white;
+				font-size: 18px;
+				text-align: center;
+				line-height: 30px;
+				letter-spacing: 2px;
+				border-radius: 4px;
+				margin-top: 120px;
+				margin-left: 60px;
+			}
+		}
+	}
+}

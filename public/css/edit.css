@@ -1,0 +1,38 @@
+body {
+  background-color: rgba(249, 171, 33, 0.1); }
+
+.back {
+  padding: 20px 10% 10px 10%;
+  font-size: 30px; }
+
+.back:hover {
+  cursor: pointer; }
+
+.contain {
+  padding: 0 10% 10% 10%; }
+  .contain section {
+    margin-top: 10px; }
+  .contain label {
+    font-size: 16px;
+    padding-left: 1%; }
+  .contain input, .contain .btn {
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid #f9ab21;
+    border-radius: 4px;
+    line-height: 40px; }
+  .contain input {
+    width: 98%;
+    margin-top: 4px;
+    padding-left: 2%; }
+  .contain .btn {
+    width: 100%;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+    letter-spacing: 4px;
+    background-color: #f9ab21; }
+  .contain .btn:hover {
+    cursor: pointer; }
+
+/*# sourceMappingURL=edit.css.map */

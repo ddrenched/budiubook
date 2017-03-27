@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link type="text/css" rel="stylesheet" href="/css/reset.css">
+	<link type="text/css" rel="stylesheet" href="/css/user.css">
+	<title>adminPage</title>
+</head>
+<body>
+	<nav>
+		<a href="index">
+			<div class="logo">
+				<img src="/img/logo.png" alt="logo">
+				<span>budiubook</span>
+			</div>
+		</a>
+	</nav>
+	<!-- 管理员界面 -->
+	<% if(user.admin==true){%>
+	<div class="info">
+		<p>图书管理员</p>
+	</div>
+	<div class="admin-contain">
+		<a href="note">
+			<div class="note">
+				<span class="title">向我提交的申请</span>
+				<span class="sy">➡️</span>
+			</div>
+		</a>		
+		<a href="edit">
+			<div class="edit">
+				<span class="title">书角整理</span>
+				<span class="sy">➡️</span>
+			</div>
+		</a>
+	</div>
+	<% } else { %>
+	<!-- 用户界面 -->
+	<p>开发中。。。</p>
+<!-- 	<div class="info">
+		<p><%= user.user %> <span>的个人主页</span></p>
+	</div>
+	<div class="user-contain">
+		<p class="title">我的借阅</p>
+		<% for(var i = 0; i < bookList.length; i++){ %>
+		<div class="item">
+			<section class="left">
+				<img id="img" src="<%= bookList[i].link %>">
+				<p>《<%= bookList[i].name %>》</p>
+			</section>
+			<section class="right">
+				<div class="btn" onclick="back('<%= bookList[i].id %>', '<%= bookList[i].name %>', '<%= user.user %>', '<%= bookList[i].link %>', true)">归还</div>
+			</section>
+		</div>
+		<% } %>
+	</div> -->
+	<% } %>
+
+	<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		function back(id, name, user, link, type){
+			let data = {
+				"id": id,
+				"name": name,
+				"user": user,
+				"link": link,
+				"type": type
+			}
+			data = JSON.stringify(data);
+			let con = confirm('申请将这本书放回书角？');
+			if(con == true){
+				$.ajax({
+					url: '/back',
+					method: 'POST',
+					contentType: 'application/json; charset=utf-8',
+					data: data,
+					success: function(){
+						alert('申请已提交');
+					},
+					error: function(){
+						alert('错误');
+					}
+				});
+			}
+		}
+	</script>
+</body>
+</html>

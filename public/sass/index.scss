@@ -1,0 +1,136 @@
+$org: #f9ab21;
+body{
+
+}
+nav{
+	width: 100%;
+	height: 60px;
+	padding-top: 6px;
+	background-color: white;
+	overflow: hidden;
+	border-bottom: 3px solid $org;
+	a{	
+		display: inline-block;
+		width: 66%;
+		.logo {
+			img{
+				width: 40px;
+				height: 40px;
+				margin: 10px 0 0 10px;
+			}
+			span{
+				vertical-align: top;
+				line-height: 60px;
+				font-size: 20px;
+				font-weight: 600;
+				color: $org;
+				flex:3;
+			}
+		}
+	}
+	.me{
+		width: 24%;
+		float: right;
+		padding-right: 10px;
+		line-height: 60px;
+		text-align: right;
+		font-size: 40px;
+	}
+}
+
+.contain{
+	width: 100%;
+	.item{
+		border-bottom: 1px solid $org;
+		.item-wrap{
+			width: 90%;
+			margin: 0 auto;
+			padding: 16px 0;
+			font-size: 0;
+			.left{
+				display: inline-block;
+				width: 65%;
+				p{
+					.key{
+						display: inline-block;
+						width: 60px;
+						font-size: 14px;
+					}
+					.val{
+						font-size: 16px;
+					}
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					line-height: 22px;
+					max-width: 200px;
+					padding-right: 20px;
+
+				}
+				.btn{
+					width: 110px;
+					height: 30px;
+					margin-top: 20px; 	
+					text-align: center;
+					line-height: 30px;
+					color: white;
+					font-size: 18px;
+					border-radius: 4px;
+					letter-spacing: 2px;
+				}
+				.okbtn{
+					background-color: $org;
+				}
+				.ordbtn{
+					background-color: #cc9966;
+				}			
+				.nobtn{
+					background-color: #c0c0c0;
+				}
+			}		
+			.right{
+				display: inline-block;
+				vertical-align: top;
+				width: 35%;
+				img{
+					float: right;
+					width: 100px;
+					height: 160px;
+				}
+			}
+		}	
+	}
+}
+.page-contain{
+	width: 100%;
+	margin-top: 20px;
+	.page-wrap{
+		width: 90%;
+		margin: 0 auto;
+		.pagebtn{
+			margin: 4px;
+			height: 40px;
+			border-radius: 4px;
+			background-color: $org;
+			color: white;
+			text-align: center;
+			line-height: 40px;
+		}
+	}
+	.act-wrap{
+		display: flex;
+		justify-content: space-around;
+		.actbtn{
+			flex: 1;
+			max-width: 100px;
+		}
+	}	
+	.num-wrap{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.numbtn{
+			width: 40px;
+		}
+	}
+}

@@ -1,0 +1,102 @@
+body {
+  background-color: rgba(249, 171, 33, 0.1); }
+
+nav {
+  width: 100%;
+  height: 60px;
+  padding-top: 6px;
+  background-color: white;
+  overflow: hidden; }
+  nav a {
+    display: inline-block; }
+    nav a .logo {
+      flex: 1; }
+      nav a .logo img {
+        width: 40px;
+        height: 40px;
+        margin: 10px 0 0 10px; }
+      nav a .logo span {
+        vertical-align: top;
+        flex: 1;
+        line-height: 60px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #f9ab21;
+        flex: 3; }
+
+.info {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(249, 171, 33, 0.7);
+  color: white; }
+  .info p {
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: left; }
+    .info p span {
+      font-size: 14px; }
+
+.admin-contain {
+  width: 100%; }
+  .admin-contain .note, .admin-contain .edit {
+    margin-top: 8px;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(249, 171, 33, 0.7);
+    background-color: rgba(249, 171, 33, 0.2);
+    display: flex; }
+    .admin-contain .note .title, .admin-contain .edit .title {
+      padding-left: 26px;
+      font-size: 16px;
+      line-height: 60px;
+      color: #999999;
+      flex: 5; }
+    .admin-contain .note .sy, .admin-contain .edit .sy {
+      font-size: 24px;
+      line-height: 60px;
+      flex: 1; }
+
+.user-contain {
+  width: 100%;
+  padding-bottom: 10%; }
+  .user-contain .title {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #999999; }
+  .user-contain .item {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f9ab21; }
+    .user-contain .item .left {
+      margin-left: 30px;
+      flex: 1; }
+      .user-contain .item .left #img {
+        width: 90px;
+        height: 130px; }
+      .user-contain .item .left p {
+        width: 150px;
+        font-size: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .user-contain .item .right {
+      flex: 1;
+      margin-right: 20px; }
+      .user-contain .item .right .btn {
+        width: 100px;
+        height: 30px;
+        background-color: #f9ab21;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        line-height: 30px;
+        letter-spacing: 2px;
+        border-radius: 4px;
+        margin-top: 120px;
+        margin-left: 60px; }
+
+/*# sourceMappingURL=user.css.map */

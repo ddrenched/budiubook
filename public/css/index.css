@@ -1,0 +1,107 @@
+nav {
+  width: 100%;
+  height: 60px;
+  padding-top: 6px;
+  background-color: white;
+  overflow: hidden;
+  border-bottom: 3px solid #f9ab21; }
+  nav a {
+    display: inline-block;
+    width: 66%; }
+    nav a .logo img {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0 0 10px; }
+    nav a .logo span {
+      vertical-align: top;
+      line-height: 60px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #f9ab21;
+      flex: 3; }
+  nav .me {
+    width: 24%;
+    float: right;
+    padding-right: 10px;
+    line-height: 60px;
+    text-align: right;
+    font-size: 40px; }
+
+.contain {
+  width: 100%; }
+  .contain .item {
+    border-bottom: 1px solid #f9ab21; }
+    .contain .item .item-wrap {
+      width: 90%;
+      margin: 0 auto;
+      padding: 16px 0;
+      font-size: 0; }
+      .contain .item .item-wrap .left {
+        display: inline-block;
+        width: 65%; }
+        .contain .item .item-wrap .left p {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          line-height: 22px;
+          max-width: 200px;
+          padding-right: 20px; }
+          .contain .item .item-wrap .left p .key {
+            display: inline-block;
+            width: 60px;
+            font-size: 14px; }
+          .contain .item .item-wrap .left p .val {
+            font-size: 16px; }
+        .contain .item .item-wrap .left .btn {
+          width: 110px;
+          height: 30px;
+          margin-top: 20px;
+          text-align: center;
+          line-height: 30px;
+          color: white;
+          font-size: 18px;
+          border-radius: 4px;
+          letter-spacing: 2px; }
+        .contain .item .item-wrap .left .okbtn {
+          background-color: #f9ab21; }
+        .contain .item .item-wrap .left .ordbtn {
+          background-color: #cc9966; }
+        .contain .item .item-wrap .left .nobtn {
+          background-color: #c0c0c0; }
+      .contain .item .item-wrap .right {
+        display: inline-block;
+        vertical-align: top;
+        width: 35%; }
+        .contain .item .item-wrap .right img {
+          float: right;
+          width: 100px;
+          height: 160px; }
+
+.page-contain {
+  width: 100%;
+  margin-top: 20px; }
+  .page-contain .page-wrap {
+    width: 90%;
+    margin: 0 auto; }
+    .page-contain .page-wrap .pagebtn {
+      margin: 4px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #f9ab21;
+      color: white;
+      text-align: center;
+      line-height: 40px; }
+  .page-contain .act-wrap {
+    display: flex;
+    justify-content: space-around; }
+    .page-contain .act-wrap .actbtn {
+      flex: 1;
+      max-width: 100px; }
+  .page-contain .num-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .page-contain .num-wrap .numbtn {
+      width: 40px; }
+
+/*# sourceMappingURL=index.css.map */

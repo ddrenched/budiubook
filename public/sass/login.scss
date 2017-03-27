@@ -1,0 +1,41 @@
+$org: #f9ab21;
+body{
+	background-color: rgba(249, 171, 33, .1);
+}
+nav{
+	margin-top: 60px;
+	p{
+		font-size: 42px;
+		font-weight: lighter;
+		color: $org;
+		text-align: center;
+	}
+}
+.main{
+	width: 300px;
+	height: 340px;
+	margin: 0 auto 0 auto;
+	padding-top: 20px;
+	background-color: transparent;
+	input{
+		box-sizing: content-box;
+		width: 260px;
+		height: 46px;
+		display: block;
+		margin: 20px auto 0 auto;
+		padding-left: 20px;
+		border-radius: 6px;
+		font-size: 18px;
+		color: grey;
+		border: 1px solid $org;
+	}
+	.login, .sign{
+		background-color: $org;
+		color: white;
+		letter-spacing: 4px;
+		border: none;
+	}
+	.login{
+		margin-top: 40px;
+	}
+}

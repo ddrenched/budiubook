@@ -1,0 +1,56 @@
+$org: #f9ab21;
+body{
+/*	background-color: pink;
+*/}
+.item{
+	display: flex;
+	margin-top: 20px;
+	padding: 16px;
+	.left{
+		flex: 2;
+		p{
+			.key{
+				display: inline-block;
+				width: 60px;
+				font-size: 16px;
+			}
+			.val{
+				font-size: 18px;
+			}
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			line-height: 22px;
+			max-width: 200px;
+			padding-right: 20px;
+
+		}
+	}		
+	.right{
+		flex: 1;
+		img{
+			width: 100px;
+			height: 160px;
+		}
+	}
+}
+.btn{
+	width: 200px;
+	height: 40px;
+	margin: 0 auto;	
+	background-color: $org;
+	text-align: center;
+	line-height: 40px;
+	color: white;
+	font-size: 20px;
+	border-radius: 4px;
+}
+.info{
+	padding: 20px;
+	p{
+		font-size: 16px;
+		letter-spacing: 1px;
+		line-height: 26px;
+		color: grey;
+	}
+}

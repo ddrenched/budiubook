@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link type="text/css" rel="stylesheet" href="/css/reset.css">
+	<link type="text/css" rel="stylesheet" href="/css/edit.css">
+	<title>editPage</title>
+</head>
+<body>	
+	<div class="back">⬅️</div>
+	<div class="contain">
+		<section>
+			<label>图书ID</label>
+			<input id="id" type="text" placeholder="17032101 ( 年:17, 月:03, 日:21, 号码:01 )">
+		</section>	
+		<section>
+			<label>图书名称</label>
+			<input id="name" type="text" placeholder="老人与海">
+		</section>		
+		<section>
+			<label>出版社</label>
+			<input id="publish" type="text" placeholder="北京大学出版社">
+		</section>		
+		<section>
+			<label>作者</label>
+			<input id="author" type="text" placeholder="海明威">
+		</section>		
+		<section>
+			<label>年份</label>
+			<input id="year" type="text" placeholder="2013">
+		</section>		
+		<section>
+			<label>所有人</label>
+			<input id="owner" type="text" placeholder="古潆延">
+		</section>			
+		<section>
+			<label>封面链接</label>
+			<input id="link" type="text" placeholder="https://img3.doubanio.com/lpic/s6182450.jpg">
+		</section>
+		<section>
+			<div class="btn">添加到书角</div>
+		</section>
+	</div>
+	
+	<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.back').click(function(){
+				let con = confirm('离开编辑页？');
+				if(con == true){
+					history.back();
+				}
+			})
+		})
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('.btn').click(function(){
+				let id = $('#id').val(),
+					name = $('#name').val(),
+					publish = $('#publish').val(),
+					author = $('#author').val(),
+					year = $('#year').val(),
+					owner = $('#owner').val(),
+					link = $('#link').val();
+				if(id != '' && name != '' && publish != '' && author != '' && year != '' && owner != '' && link != ''){
+					let data = {
+						"id" : id,
+						"name" : name,
+						"publish" : publish,
+						"author" : author,
+						"year" : year,
+						"owner" : owner,
+						"link" : link,
+					}
+					data = JSON.stringify(data);
+					$.ajax({
+						url : '/edit',
+						method: 'POST',
+						contentType: 'application/json; charset=utf-8',
+						data: data,
+						success: function(){
+							let con = confirm('添加成功，继续添加吗？');
+							if(con == true){
+								location.reload();
+							}
+							else{
+								location.href ='index';
+							}
+						},
+						error: function(){
+							alert('失败了！');
+						}
+					})
+				}
+				else{
+					alert('有未填写完整的信息！');
+				}		
+			});
+		})
+	</script>
+</body>
+</html>

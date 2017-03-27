@@ -1,0 +1,49 @@
+body {
+  /*	background-color: pink;
+  */ }
+
+.item {
+  display: flex;
+  margin-top: 20px;
+  padding: 16px; }
+  .item .left {
+    flex: 2; }
+    .item .left p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 22px;
+      max-width: 200px;
+      padding-right: 20px; }
+      .item .left p .key {
+        display: inline-block;
+        width: 60px;
+        font-size: 16px; }
+      .item .left p .val {
+        font-size: 18px; }
+  .item .right {
+    flex: 1; }
+    .item .right img {
+      width: 100px;
+      height: 160px; }
+
+.btn {
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #f9ab21;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-size: 20px;
+  border-radius: 4px; }
+
+.info {
+  padding: 20px; }
+  .info p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 26px;
+    color: grey; }
+
+/*# sourceMappingURL=detail.css.map */

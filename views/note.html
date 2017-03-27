@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link type="text/css" rel="stylesheet" href="/css/reset.css">
+	<link type="text/css" rel="stylesheet" href="/css/note.css">
+	<title>notePage</title>
+</head>
+<body>
+	<nav>
+		<a href="index">
+			<div class="logo">
+				<img src="/img/logo.png" alt="logo">
+				<span>budiubook</span>
+			</div>
+		</a>
+	</nav>
+	<div class="info"></div>
+	<% for(var i = 0; i < applyList.length; i++){ %>
+		<div class="item">
+			<div class="item-wrap">
+				<section class="left">
+					<img id="img" src="<%= applyList[i].link %>">
+					<p>《<%= applyList[i].name %>》</p>
+					<p>谁想看: <%= applyList[i].applicant %></p>
+					<p>申请时间: <%= applyList[i].date %></p>
+					<p>进度:<% if(applyList[i].process=='A'){ %>
+								待处理 💟
+							<% }else if(applyList[i].process=='B'){ %>
+								借给Ta了 🚼
+							<% }else if(applyList[i].process=='C'){ %>
+								放回了书角 ✅
+							<% } %>
+					</p>
+				</section>
+				<section class="right">
+					<div class="btn-wrap">
+						<% if(applyList[i].process=='A'){ %>
+						<div class="btn toTa" onclick="agree('<%= applyList[i].id %>', false, 'B')">借给Ta</div>	
+						<% }else{ %>
+						<div class="btn toTa grey">借给Ta🚫</div>
+						<% } %>
+						<% if(applyList[i].process=='B'){ %>			
+						<div class="btn toStore" onclick="agree('<%= applyList[i].id %>', true, 'C')">Ta已归还</div>
+						<% }else{ %>
+						<div class="btn toStore grey">Ta已归还🚫</div>
+						<% } %>
+					</div>
+				</section>
+			</div>
+		</div>
+	<% } %>
+
+	<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		function agree(id, type, process){
+			let data = {"id": id, "type": type, "process": process};
+			data = JSON.stringify(data);
+			let con = confirm('确定执行？');
+			if(con == true){
+				$.ajax({
+					url: '/agree',
+					method: 'POST',
+					contentType: 'application/json; charset=utf-8',
+					data: data,
+					success: function(){
+						location.reload();
+					},
+					error: function(){
+						alert('err try again');
+					}
+				})
+			}
+		}
+	</script>
+</body>
+</html>
